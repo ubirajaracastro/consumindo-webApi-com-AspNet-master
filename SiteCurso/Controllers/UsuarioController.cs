@@ -35,11 +35,8 @@ namespace SiteCurso.Controllers
                 if (resposta.IsSuccessStatusCode)
                 {
                     var conteudo = resposta.Content.ReadAsStringAsync().Result;
-
                     cidade = JsonConvert.DeserializeObject<Cidade[]>(conteudo);
-
                 }
-
             }
 
             return cidade;
