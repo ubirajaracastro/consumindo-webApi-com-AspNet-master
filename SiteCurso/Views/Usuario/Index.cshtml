@@ -1,0 +1,77 @@
+﻿@model IEnumerable<SiteCurso.ViewModels.Usuario>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.nome)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.sobrenome)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.cpf)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.telResidencial)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.telCelular)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.rg)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.cod_cidade)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.nome)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.sobrenome)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.cpf)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.telResidencial)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.telCelular)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.rg)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.email)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.cidade.nome_cidade)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.cod_cliente }) |
+            @Html.ActionLink("Details", "Details", new { id=item.cod_cliente }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.cod_cliente })
+        </td>
+    </tr>
+}
+
+</table>
