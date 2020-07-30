@@ -22,13 +22,13 @@ namespace SiteCurso.Controllers
             using (var client = new HttpClient())
             {
 
-                client.BaseAddress = new Uri("http://localhost:62120/api/cidades");
+                client.BaseAddress = new Uri("http://localhost:55343/api/cidade");
                 client.DefaultRequestHeaders.Clear();
                 client.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
 
 
-                string token = await AutenticacaoUsuarios.getTokenAsync();
-                client.DefaultRequestHeaders.Add("Authorization", "bearer " + token);
+                //string token = await AutenticacaoUsuarios.getTokenAsync();
+                //client.DefaultRequestHeaders.Add("Authorization", "bearer " + token);
 
                 HttpResponseMessage resposta = await client.GetAsync(client.BaseAddress.ToString());
 
@@ -57,7 +57,7 @@ namespace SiteCurso.Controllers
             using (var client = new HttpClient())
             {
 
-                client.BaseAddress = new Uri("http://localhost:62120/api/usuarios");
+                client.BaseAddress = new Uri("http://localhost:55343/api/usuario");
                 client.DefaultRequestHeaders.Clear();
                 client.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
 
@@ -70,7 +70,6 @@ namespace SiteCurso.Controllers
                 if (resposta.IsSuccessStatusCode)
                 {
                     var conteudo = resposta.Content.ReadAsStringAsync().Result;
-
                     usuarios = JsonConvert.DeserializeObject<Usuario[]>(conteudo);
 
                 }
@@ -125,7 +124,7 @@ namespace SiteCurso.Controllers
                 using (var client = new HttpClient())
                 {
 
-                    client.BaseAddress = new Uri("http://localhost:62120/api/usuarios");
+                    client.BaseAddress = new Uri("http://localhost:55343/api/usuario");
                     client.DefaultRequestHeaders.Clear();
                     client.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
 
@@ -161,7 +160,7 @@ namespace SiteCurso.Controllers
             using (var client = new HttpClient())
             {
 
-                client.BaseAddress = new Uri("http://localhost:62120/");
+                client.BaseAddress = new Uri("http://localhost:55343/");
                 client.DefaultRequestHeaders.Clear();
                 client.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
 
@@ -169,7 +168,7 @@ namespace SiteCurso.Controllers
                 string token = await AutenticacaoUsuarios.getTokenAsync();
                 client.DefaultRequestHeaders.Add("Authorization", "bearer " + token);
 
-                HttpResponseMessage resposta = await client.GetAsync("api/usuarios/"+id);
+                HttpResponseMessage resposta = await client.GetAsync("api/usuario/"+id);
 
                 if (resposta.IsSuccessStatusCode)
                 {
@@ -218,7 +217,7 @@ namespace SiteCurso.Controllers
                 using (var client = new HttpClient())
                 {
 
-                    client.BaseAddress = new Uri("http://localhost:62120/");
+                    client.BaseAddress = new Uri("http://localhost:55343/");
                     client.DefaultRequestHeaders.Clear();
                     client.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
 
@@ -252,7 +251,7 @@ namespace SiteCurso.Controllers
             using (var client = new HttpClient())
             {
 
-                client.BaseAddress = new Uri("http://localhost:62120/");
+                client.BaseAddress = new Uri("http://localhost:55343/");
                 client.DefaultRequestHeaders.Clear();
                 client.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
 
@@ -291,7 +290,7 @@ namespace SiteCurso.Controllers
                 using (var client = new HttpClient())
                 {
 
-                    client.BaseAddress = new Uri("http://localhost:62120/");
+                    client.BaseAddress = new Uri("http://localhost:55343/");
                     client.DefaultRequestHeaders.Clear();
                     client.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
 

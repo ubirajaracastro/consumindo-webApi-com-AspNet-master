@@ -10,8 +10,8 @@ namespace SiteCurso
     public static class AutenticacaoUsuarios
     {
 
-        public static string username = "LuanPedro";
-        public static string password = "123";
+        public static string username = "bira.castro";
+        public static string password = "vacaloca171";
 
         public static string token = "";
 
@@ -24,7 +24,7 @@ namespace SiteCurso
             using (var client = new HttpClient())
             {
 
-                client.BaseAddress = new Uri("http://localhost:62120/token");
+                client.BaseAddress = new Uri("http://localhost:55343/token");
                 client.DefaultRequestHeaders.Clear();
                 client.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
 
